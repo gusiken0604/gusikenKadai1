@@ -9,16 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     @IBOutlet weak var valueTextField1: UITextField!
     @IBOutlet weak var valueTextField2: UITextField!
     @IBOutlet weak var valueTextField3: UITextField!
     @IBOutlet weak var valueTextField4: UITextField!
     @IBOutlet weak var valueTextField5: UITextField!
-
+    @IBOutlet weak var result: UILabel!
+    
     @IBAction func sum_button(_ sender: Any) {
         
         let value1 = Int(valueTextField1.text ?? "") ?? 0
@@ -29,10 +26,8 @@ class ViewController: UIViewController {
         
         let total = value1 + value2 + value3 + value4 + value5
         result.text = "\(total)"
+        
     }
-    
-    @IBOutlet weak var result: UILabel!
-    
     
 }
 
