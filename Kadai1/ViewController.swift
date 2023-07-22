@@ -8,16 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet private weak var valueTextField1: UITextField!
+    @IBOutlet private weak var valueTextField2: UITextField!
+    @IBOutlet private weak var valueTextField3: UITextField!
+    @IBOutlet private weak var valueTextField4: UITextField!
+    @IBOutlet private weak var valueTextField5: UITextField!
+    @IBOutlet private weak var result: UILabel!
 
-    @IBOutlet weak var valueTextField1: UITextField!
-    @IBOutlet weak var valueTextField2: UITextField!
-    @IBOutlet weak var valueTextField3: UITextField!
-    @IBOutlet weak var valueTextField4: UITextField!
-    @IBOutlet weak var valueTextField5: UITextField!
-    @IBOutlet weak var result: UILabel!
     
-    @IBAction func sum_button(_ sender: Any) {
         
+    @IBAction private func sumButton(_ sender: Any) {
         let value1 = Int(valueTextField1.text ?? "") ?? 0
         let value2 = Int(valueTextField2.text ?? "") ?? 0
         let value3 = Int(valueTextField3.text ?? "") ?? 0
