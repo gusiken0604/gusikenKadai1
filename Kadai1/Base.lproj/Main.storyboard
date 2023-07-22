@@ -70,7 +70,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <action selector="sum_button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ad-k7-aol"/>
+                                    <action selector="sumButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ad-k7-aol"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2w-AZ-qAX">
