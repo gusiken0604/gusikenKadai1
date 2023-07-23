@@ -16,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BCE9C29E2BD10566F41C0FC /* Pods-Kadai1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kadai1.release.xcconfig"; path = "Target Support Files/Pods-Kadai1/Pods-Kadai1.release.xcconfig"; sourceTree = "<group>"; };
+		2245F4486B3D0287607B55BF /* Pods_Kadai1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kadai1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A060E8734CB3BF36BDA94E59 /* Pods-Kadai1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kadai1.debug.xcconfig"; path = "Target Support Files/Pods-Kadai1/Pods-Kadai1.debug.xcconfig"; sourceTree = "<group>"; };
 		B26A59A42A63EDFF003C7BAF /* Kadai1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kadai1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26A59A72A63EDFF003C7BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B26A59A92A63EDFF003C7BAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,11 +40,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9991184A86F2F4C5DF06499 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A060E8734CB3BF36BDA94E59 /* Pods-Kadai1.debug.xcconfig */,
+				0BCE9C29E2BD10566F41C0FC /* Pods-Kadai1.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B26A599B2A63EDFF003C7BAF = {
 			isa = PBXGroup;
 			children = (
 				B26A59A62A63EDFF003C7BAF /* Kadai1 */,
 				B26A59A52A63EDFF003C7BAF /* Products */,
+				A9991184A86F2F4C5DF06499 /* Pods */,
+				C3BF8880BB64F79103A1347F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +81,14 @@
 			path = Kadai1;
 			sourceTree = "<group>";
 		};
+		C3BF8880BB64F79103A1347F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2245F4486B3D0287607B55BF /* Pods_Kadai1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +96,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B26A59B82A63EE00003C7BAF /* Build configuration list for PBXNativeTarget "Kadai1" */;
 			buildPhases = (
+				15749B76A8B9CDACC4861C54 /* [CP] Check Pods Manifest.lock */,
 				B26A59A02A63EDFF003C7BAF /* Sources */,
 				B26A59A12A63EDFF003C7BAF /* Frameworks */,
 				B26A59A22A63EDFF003C7BAF /* Resources */,
@@ -135,6 +158,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		15749B76A8B9CDACC4861C54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kadai1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B26A59BB2A651400003C7BAF /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,7 +196,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint autocorrect --format\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if test -d /opt/homebrew/bin; then\n    PATH=/opt/homebrew/bin/:$PATH\nfi\n\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -304,12 +349,14 @@
 		};
 		B26A59B92A63EE00003C7BAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A060E8734CB3BF36BDA94E59 /* Pods-Kadai1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GQ85995VF4;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Kadai1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -332,12 +379,14 @@
 		};
 		B26A59BA2A63EE00003C7BAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BCE9C29E2BD10566F41C0FC /* Pods-Kadai1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GQ85995VF4;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Kadai1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

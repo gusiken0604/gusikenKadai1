@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var valueTextField1: UITextField!
+    @IBOutlet weak private var valueTextField1: UITextField!
     @IBOutlet weak var valueTextField2: UITextField!
     @IBOutlet weak var valueTextField3: UITextField!
     @IBOutlet weak var valueTextField4: UITextField!
